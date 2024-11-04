@@ -19,19 +19,17 @@ let merge(tab,i,j,k : int array * int *int *int): unit =
             h:= !h + 1
           )
     )
-  done 
+  done;
+  for p = 0 to (taille - 1)  do
+    tab.(i+p) <- tab_int.(p)
+  done
 ;;
 
 (*Tri un tableau avec l'algorithme du tri fusion*)
 let rec merge_sort_rec(tab, i ,j  : int array * int * int): unit = 
-  if (j-i) <= 1
+  if (j-i) < 1
   then (
-    if tab.(j) < tab.(i)
-      then (
-        let tmp : int = tab.(j) in
-        tab.(j) <- tab.(i);
-        tab.(i) <- tmp
-      ) 
+    
   )
   else 
     (
@@ -53,3 +51,9 @@ let merge_sort (tab : int array):unit =
 let tableau = [|3;2;1|] in 
   merge_sort(tableau);
   tableau;;
+
+
+let tableau = [|1;3;5;2;4;6|] in
+  merge(tableau,0,2,5);
+  tableau
+;; 
