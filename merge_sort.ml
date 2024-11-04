@@ -24,18 +24,32 @@ let merge(tab,i,j,k : int array * int *int *int): unit =
 
 (*Tri un tableau avec l'algorithme du tri fusion*)
 let rec merge_sort_rec(tab, i ,j  : int array * int * int): unit = 
-  if Array.length tab <= 1
-  then ()
+  if (j-i) <= 1
+  then (
+    if tab.(j) < tab.(i)
+      then (
+        let tmp : int = tab.(j) in
+        tab.(j) <- tab.(i);
+        tab.(i) <- tmp
+      ) 
+  )
   else 
     (
+
       let taille : int = (i+j)/2 in
-      merge_sort_rec(tab,0,taille);
-      merge_sort_rec(tab,taille+1,j);
+      merge_sort_rec(tab,i,taille);
+      merge_sort_rec(tab,taille + 1,j);
       merge(tab,i,taille,j) 
     ) 
 ;;
 
 let merge_sort (tab : int array):unit =
   let len : int = Array.length tab in 
-  merge_sort_rec(tab,0,len)
+  merge_sort_rec(tab,0,(len-1))
 ;;
+
+
+
+let tableau = [|3;2;1|] in 
+  merge_sort(tableau);
+  tableau;;
