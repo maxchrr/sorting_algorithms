@@ -1,4 +1,5 @@
 #use "insertion_sort.ml";;
+#use "selection_sort.ml";;
 
 let fill_new_array n =
 	let a = Array.make n 0 in
@@ -20,3 +21,4 @@ let time f x =
 ;;
 
 time insertion_sort (create_random_array ());;
+time selection_sort (create_random_array ());;
