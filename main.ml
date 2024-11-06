@@ -2,6 +2,7 @@
 #use "selection_sort.ml";;
 #use "bubble_sort.ml";;
 #use "quicksort.ml";;
+#use "merge_sort.ml";;
 
 let fill_new_array n =
 	let a = Array.make n 0 in
@@ -10,7 +11,7 @@ let fill_new_array n =
 	done;
 	a
 
-let create_random_array () =
+let create_random_array () : int array =
 	Random.self_init ();
 	let len = Random.int 10000 in
 	fill_new_array len
@@ -26,3 +27,4 @@ time insertion_sort (create_random_array ());;
 time selection_sort (create_random_array ());;
 time bubble_sort (create_random_array ());;
 time quicksort (create_random_array ());;
+time merge_sort (create_random_array ());;
