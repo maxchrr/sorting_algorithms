@@ -3,6 +3,7 @@
 #use "bubble_sort.ml";;
 #use "quicksort.ml";;
 #use "merge_sort.ml";;
+#use "cocktail_sort.ml";;
 #use "comb_sort.ml";;
 
 let fill_new_array n =
@@ -31,4 +32,5 @@ time selection_sort (create_random_array ()) "selection sort";;
 time bubble_sort (create_random_array ()) "bubble sort";;
 time quicksort (create_random_array ()) "quicksort";;
 (*time merge_sort (create_random_array ()) "merge sort";;*)
+time cocktail_sort (create_random_array ()) "cocktail sort";;
 time comb_sort (create_random_array ()) "comb sort";;
