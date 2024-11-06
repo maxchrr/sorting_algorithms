@@ -17,16 +17,18 @@ let create_random_array () =
 	let len = Random.int 10000 in
 	fill_new_array len
 
-let time f x =
+let time f x n =
 	let current_time = Sys.time () in
 	let fx = f x in
-	Printf.printf "Execution time: %.3fms\n" ((Sys.time () -. current_time) *. 1000.);
+	Printf.printf "Execution time of %s: %.3fms\n" n (
+		(Sys.time () -. current_time) *. 1000.
+	);
 	fx
 ;;
 
-time insertion_sort (create_random_array ());;
-time selection_sort (create_random_array ());;
-time bubble_sort (create_random_array ());;
-time quicksort (create_random_array ());;
-(*time merge_sort (create_random_array ());;*)
-time comb_sort (create_random_array ())
+time insertion_sort (create_random_array ()) "insertion sort";;
+time selection_sort (create_random_array ()) "selection sort";;
+time bubble_sort (create_random_array ()) "bubble sort";;
+time quicksort (create_random_array ()) "quicksort";;
+(*time merge_sort (create_random_array ()) "merge sort";;*)
+time comb_sort (create_random_array ()) "comb sort";;
