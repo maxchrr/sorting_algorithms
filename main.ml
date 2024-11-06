@@ -27,4 +27,4 @@ time insertion_sort (create_random_array ());;
 time selection_sort (create_random_array ());;
 time bubble_sort (create_random_array ());;
 time quicksort (create_random_array ());;
-time merge_sort (create_random_array ());;
+(*time merge_sort (create_random_array ());;*)
